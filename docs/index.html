@@ -22,7 +22,7 @@
 </ol></section>
 <section id="materials"><h2>材料文件清单</h2><p>适用于中国大陆本科背景。每行对应一个文件，XXX 可替换为姓名或项目简称。勾选你实际需要且已准备好的文件。</p><div class="checklist-toolbar"><div><label for="status">本科状态</label> <select id="status"><option value="graduate">已毕业</option><option value="student">本科最后一年</option></select></div><p id="progress" aria-live="polite"></p></div><p id="student-note" hidden>独立学院申请人须在申请时已取得学位。</p><ul id="checklist"></ul></section>
 <section id="library"><h2>信息汇总检索库</h2><form id="search" role="search"><label for="query">搜索资料</label><div><input id="query" type="search" placeholder="例如 CSSD、雅思、课程描述"><select id="category" aria-label="资料类型"><option value="">全部类型</option><option>官方链接</option><option>下载模板</option><option>填写案例</option><option>经验参考</option><option>常见问题</option><option>申请指南</option></select></div></form><p id="count" aria-live="polite"></p><div class="grid" id="results"></div></section></main><footer><div class="shell footer-inner"><strong>瑞典留学申请指南</strong><nav aria-label="页脚导航"><a href="#timeline">时间线</a><a href="#materials">材料清单</a><a href="#top">返回顶部 ↑</a></nav><a class="photo-credit" href="https://unsplash.com/photos/hqDf171O0eU">首图：斯德哥尔摩 · Unsplash</a><section class="footer-note" aria-labelledby="information-note"><h2 id="information-note">信息使用说明</h2><p>本站提供申请信息供参考，无法保证所有内容始终准确、完整或适用于每位申请者。提交申请前，请沿页面中的来源链接查阅原文，并向招生平台或目标院校核对当季的截止日期、材料要求和提交方式。</p></section></div></footer>
-<script src="data.js"></script><script>
+<script src="data.js?v=original-templates"></script><script>
 function add(parent,tag,value) {
  const node=document.createElement(tag);
  if(value) node.textContent=value;
@@ -61,7 +61,7 @@ function renderLibrary(){
   if(url){
    const link=add(card,"a",type==="下载模板" ? "下载文件" : "打开资料");
    link.href=url;
-   if(type==="下载模板") link.download="";
+   if(url.startsWith("templates/")){ link.download=""; link.textContent="下载 Word 文件"; }
   }
   if(keys.length) links(add(card,"p"),keys);
  }
