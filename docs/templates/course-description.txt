@@ -1,0 +1,15 @@
+Course Description
+Institution: [Your undergraduate institution]
+Degree programme: [Programme]
+Course title and code: [As shown on the transcript]
+Semester and year: [Term]
+Local credits / contact hours: [As recorded by the institution]
+Course content: [Summary based on your actual syllabus]
+Source: [Official syllabus title, year, link or page]
+ECTS equivalence: [Only if requested, with conversion basis]
+
+Prerequisite mapping / 先修课对照
+Target programme and application round: [...]
+Published prerequisite and official link: [...]
+Completed course(s), credits and transcript page(s): [...]
+Relevant topics and syllabus page(s): [...]

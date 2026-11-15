@@ -1,0 +1,151 @@
+:root {
+  color-scheme: light;
+  --navy: #102d49;
+  --blue: #154c79;
+  --muted: #4b6274;
+  --line: #d8e3eb;
+  --yellow: #ffd66b;
+  font: 16px/1.65 "Instrument Sans", "Noto Sans SC", system-ui, sans-serif;
+  color: var(--navy);
+  background: #f7f9fc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--blue); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid #9a6100; outline-offset: 4px; }
+.shell { width: min(1136px, calc(100% - 48px)); margin-inline: auto; }
+.skip { position: absolute; top: -100px; z-index: 4; padding: .5rem 1rem; background: white; }
+.skip:focus { top: .5rem; }
+.topbar { background: white; border-bottom: 1px solid var(--line); }
+.topbar-inner, nav, .brand, .actions, .checklist-toolbar { display: flex; align-items: center; }
+.topbar-inner { min-height: 65px; justify-content: space-between; gap: 1rem; }
+.brand { gap: .65rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+.flag {
+  width: 26px; height: 17px; border-radius: 2px;
+  background: linear-gradient(transparent 39%, #ffd34e 39% 58%, transparent 58%),
+              linear-gradient(90deg, #17679d 30%, #ffd34e 30% 42%, #17679d 42%);
+}
+nav, .actions { gap: .75rem 1.5rem; flex-wrap: wrap; }
+nav a { font-weight: 650; text-decoration: none; }
+.hero {
+  color: white;
+  background: radial-gradient(ellipse at 85% 18%, #225c89, transparent 65%), #102d49;
+  border-bottom: 4px solid var(--yellow);
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1.5fr 1fr; align-items: center;
+  gap: clamp(2rem, 8vw, 8rem); padding-block: clamp(3rem, 7vw, 6rem);
+}
+.eyebrow { color: var(--yellow); font-weight: 700; letter-spacing: .08em; margin: 0; }
+h1 { font-size: clamp(3rem, 7vw, 6.25rem); line-height: 1.07; letter-spacing: -.07em; margin: .23em 0; }
+.intro { color: #e1edf7; margin: 0 0 1.7rem; }
+.actions { gap: .7rem; }
+.actions a { padding: .65rem 1rem; border: 1px solid #9fb8ce; border-radius: .5rem; font-weight: 700; text-decoration: none; }
+.actions .primary { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.actions .secondary { color: white; }
+.hero-date { padding: 1.5rem 1.75rem; border: 1px solid #789ab8; border-radius: 1rem; background: #0e2b48a6; }
+.hero-date p { margin: 0; font-weight: 700; }
+.hero-date p:not(:first-child) { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #789ab8; }
+.hero-date strong { display: block; color: var(--yellow); font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1.15; font-variant-numeric: tabular-nums; }
+.hero-date span { color: #dbe8f2; font-size: .88rem; }
+main { padding-block: 1rem 3rem; }
+section { padding-block: clamp(1.8rem, 4vw, 3.4rem); border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -.04em; margin: 0 0 .65rem; }
+section > p { color: var(--muted); margin-top: 0; }
+.grid, .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
+.steps { padding: 0; margin: 1rem 0 0; list-style-position: inside; }
+article, .steps li, form, .checklist-toolbar, #checklist { background: white; border: 1px solid var(--line); border-radius: .8rem; }
+article, .steps li { padding: 1rem; min-width: 0; overflow-wrap: anywhere; }
+.steps li::marker, article small { color: var(--blue); font-weight: 700; }
+.steps strong { display: inline; }
+.steps strong::after { content: ""; display: block; margin-bottom: .3rem; }
+#timeline article { border-top: 3px solid var(--blue); }
+article h3 { margin: .25rem 0 .45rem; line-height: 1.35; }
+article p { color: var(--muted); }
+article p:last-child { margin-bottom: 0; }
+.checklist-toolbar { justify-content: space-between; gap: .65rem; flex-wrap: wrap; padding: .7rem 1rem; }
+.checklist-toolbar label { font-weight: 700; margin-right: .35rem; }
+#progress { margin: 0; font-weight: 700; color: var(--blue); }
+#student-note { margin: .75rem 0; }
+#checklist { padding: 0; list-style: none; margin: .75rem 0 0; overflow: hidden; }
+#checklist li { padding: .7rem 1rem; }
+#checklist li + li { border-top: 1px solid var(--line); }
+#checklist li:focus-within, #checklist li:hover { background: #eef5fb; }
+#checklist label { display: flex; align-items: baseline; gap: .6rem; cursor: pointer; }
+#checklist code { overflow-wrap: anywhere; font-size: .88rem; font-weight: 650; }
+#checklist small { display: block; margin: .23rem 0 0 1.7rem; color: var(--muted); }
+input[type=checkbox] { width: 1rem; height: 1rem; flex: 0 0 1rem; margin: 0; accent-color: var(--blue); }
+form { padding: 1rem; }
+form label { font-weight: 700; }
+form div { display: flex; gap: .6rem; margin-top: .4rem; }
+input[type=search], select { font: inherit; color: var(--navy); background: white; border: 1px solid #8198ab; border-radius: .45rem; padding: .48rem .65rem; max-width: 100%; }
+input[type=search] { flex: 1; min-width: 0; }
+#count { margin: .8rem 0; }
+#results { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+footer { padding-bottom: 2rem; }
+@media (max-width: 800px) {
+  .grid, .steps, #results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .shell { width: calc(100% - 32px); }
+  .topbar-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: .35rem; padding-block: .6rem; }
+  nav { gap: .35rem 1.1rem; }
+  .hero-inner, #results { grid-template-columns: 1fr; }
+  .hero-inner { gap: 1.35rem; }
+  .hero-date { padding: .85rem 1rem; }
+  form div { align-items: stretch; flex-direction: column; }
+}
+@media (max-width: 350px) { .grid, .steps { grid-template-columns: 1fr; } }
+
+/* Full-width photography and ruled sections give the guide a clear reading rhythm. */
+:root {
+  --navy: #203d53;
+  --blue: #245375;
+  --muted: #455c6c;
+  --line: #9eb5c3;
+  --yellow: #fff0a9;
+  --sky: #e6f2fa;
+  background: #f4f9fc;
+}
+.topbar { background: var(--sky); }
+.topbar-inner { min-height: 95px; }
+.nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: .55rem .9rem .55rem 1.15rem; }
+.nav-cta span { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border: 1px solid currentColor; border-radius: 50%; margin-left: .5rem; background: var(--yellow); }
+.hero {
+  background: linear-gradient(90deg, #102b42dc 0%, #122d4180 62%, #172f4578), url("stockholm.jpg") center 53% / cover no-repeat #274b65;
+  border-bottom-width: 0;
+}
+.hero-inner { min-height: min(680px, 75svh); align-items: end; padding-block: clamp(3.25rem, 8vw, 7rem) clamp(2.5rem, 6vw, 5rem); }
+h1 { font-size: clamp(3rem, 8vw, 7rem); }
+.hero-date { color: var(--navy); background: var(--sky); border: 0; border-radius: 0; }
+.hero-date strong, .hero-date span { color: var(--navy); }
+.hero-date p:not(:first-child) { border-color: var(--line); }
+.actions a { border-radius: 999px; }
+.actions .secondary { background: #17364ee0; }
+section { padding-block: clamp(2.4rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 4rem); line-height: 1.12; }
+.steps li, #timeline article, #results article {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1rem .35rem;
+}
+#timeline article { border-top: 2px solid var(--blue); }
+#timeline article h3 { font-family: "Barlow Condensed", system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.checklist-toolbar { background: var(--yellow); border-color: transparent; border-radius: .35rem; }
+#checklist { background: transparent; border: 0; border-radius: 0; }
+#checklist li { padding-inline: .25rem; }
+#checklist li:first-child { border-top: 1px solid var(--line); }
+form { background: var(--sky); border-radius: .35rem; }
+footer { background: var(--sky); border-top: 1px solid var(--line); padding-block: 2rem; }
+.footer-inner { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6rem 2rem; }
+.footer-inner .photo-credit { font-size: .85rem; color: var(--muted); margin-left: auto; }
+@media (max-width: 560px) {
+  .topbar-inner { min-height: auto; }
+  .nav-cta { padding: .12rem .4rem .12rem .55rem; }
+  .nav-cta span { width: 1.35rem; height: 1.35rem; margin-left: .2rem; }
+  .hero-inner { min-height: auto; }
+  .footer-inner .photo-credit { margin-left: 0; }
+}
