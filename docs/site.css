@@ -193,3 +193,20 @@ footer { background: var(--sky); border-top: 1px solid var(--line); padding-bloc
   .timeline-track li::before { inset: .5rem auto -.5rem .45rem; border-top: 0; border-left: 2px solid var(--blue); }
   .timeline-track li::after { top: .25rem; }
 }
+
+@font-face {
+  font-family: "Huiwen Mincho";
+  src: url("fonts/huiwen.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zhuque Fangsong";
+  src: url("fonts/zhuque.woff") format("woff");
+  font-display: swap;
+}
+:root { font-family: "Zhuque Fangsong", "FangSong", "Noto Serif SC", serif; }
+h1, h2, h3, #timeline article h3, .brand, .footer-inner > strong {
+  font-family: "Huiwen Mincho", "Songti SC", "Noto Serif SC", serif;
+  font-weight: 400;
+}
+input, select, button, #checklist code { font-family: inherit; }
